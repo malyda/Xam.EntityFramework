@@ -4,8 +4,9 @@
              xmlns:local="clr-namespace:Xam.EntityFramework"
              x:Class="Xam.EntityFramework.MainPage">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
-           VerticalOptions="Center" 
-           HorizontalOptions="Center" />
+    <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+        <Label>Here are some items.</Label>
+        <ListView x:Name="listView"></ListView>
+    </StackLayout>
 
 </ContentPage>
