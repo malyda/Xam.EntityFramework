@@ -2,11 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Xam.EntityFramework"
-             x:Class="Xam.EntityFramework.View.Page.MainPage">
-
-    <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-        <Label>Here are some items.</Label>
-        <ListView x:Name="listView"></ListView>
+             x:Class="Xam.EntityFramework.View.Page.MainPage" 
+             >
+    <StackLayout HorizontalOptions="Center">
+        <Label>Here are some items from db</Label>
+        <ListView ItemsSource="{Binding Path=Blogs}"></ListView>
     </StackLayout>
-
 </ContentPage>
