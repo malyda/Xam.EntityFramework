@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Xam.EntityFramework
+namespace Xam.EntityFramework.Model.DatabaseHelpers
 {
     public interface IDatabasePathHelper
     {

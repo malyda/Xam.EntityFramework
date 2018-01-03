@@ -8,6 +8,7 @@ using UIKit;
 using Xam.EntityFramework.iOS;
 using Xam.EntityFramework;
 using System.IO;
+using Xam.EntityFramework.Model.DatabaseHelpers;
 
 [assembly: Xamarin.Forms.Dependency(typeof(DatabasePathHelper))]
 namespace Xam.EntityFramework.iOS
@@ -16,7 +17,7 @@ namespace Xam.EntityFramework.iOS
     {
         public string GetDatabasePath(string filename)
         {
-           return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "..", "Library", filename;
+           return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "..", "Library", filename);
 
         }
     }

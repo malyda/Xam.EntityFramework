@@ -1,13 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Xam.EntityFramework.Model;
+using Xam.EntityFramework.Model.Entity;
 using Xamarin.Forms;
-// TODO refactor
-namespace Xam.EntityFramework
+
+namespace Xam.EntityFramework.View.Page
 {
     public partial class MainPage : ContentPage
     {

@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Xam.EntityFramework;
+using Xam.EntityFramework.Model.DatabaseHelpers;
 using Xamarin.Forms;
 
 namespace Xam.EntityFramework
@@ -13,7 +14,7 @@ namespace Xam.EntityFramework
 		{
 			InitializeComponent();
 
-			MainPage = new Xam.EntityFramework.MainPage();
+			MainPage = new View.Page.MainPage();
 		}
 
 		protected override void OnStart ()

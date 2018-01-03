@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xam.EntityFramework.UWP;
+using Xam.EntityFramework;
+using Xam.EntityFramework.Model.DatabaseHelpers;
 
 [assembly: Xamarin.Forms.Dependency(typeof(DatabasePathHelper))]
 namespace Xam.EntityFramework.UWP

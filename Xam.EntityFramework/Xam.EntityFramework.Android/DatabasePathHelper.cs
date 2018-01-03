@@ -13,6 +13,7 @@ using Android.Widget;
 using Xam.EntityFramework.Droid;
 using Xam.EntityFramework;
 using Xamarin.Forms;
+using Xam.EntityFramework.Model.DatabaseHelpers;
 
 [assembly: Xamarin.Forms.Dependency(typeof(DatabasePathHelper))]
 namespace Xam.EntityFramework.Droid

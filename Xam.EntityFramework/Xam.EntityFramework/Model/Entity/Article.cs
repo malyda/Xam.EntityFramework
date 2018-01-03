@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Xam.EntityFramework
+namespace Xam.EntityFramework.Model.Entity
 {
    public class Article
     {

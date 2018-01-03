@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Xam.EntityFramework.Model.Entity;
 
-namespace Xam.EntityFramework
+namespace Xam.EntityFramework.Model
 {
     public class DatabaseContext : DbContext
     {
