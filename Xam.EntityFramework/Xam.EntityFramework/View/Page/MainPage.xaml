@@ -4,8 +4,13 @@
              xmlns:local="clr-namespace:Xam.EntityFramework"
              x:Class="Xam.EntityFramework.View.Page.MainPage" 
              >
+    <ContentPage.BindingContext>
+        <local:View.ViewModel.MainPageVm/>
+    </ContentPage.BindingContext>
     <StackLayout HorizontalOptions="Center">
-        <Label>Here are some items from db</Label>
+        <ActivityIndicator IsRunning="{Binding IsLoading}"></ActivityIndicator>
+        <Button HorizontalOptions="CenterAndExpand" Command="{Binding AddBlogCommand}" Text="Add Blog to database"></Button>
+        <Label HorizontalOptions="Center">Here are some items from dbContext</Label>
         <ListView ItemsSource="{Binding Path=Blogs}"></ListView>
     </StackLayout>
 </ContentPage>

@@ -15,12 +15,7 @@ namespace Xam.EntityFramework.View.Page
         {
             InitializeComponent();
 
-            Debug.WriteLine(App.DB());
-
-            this.BindingContext = new MainPageVm();
-            
-        }
-
-      
+            Debug.WriteLine(App.DB());       
+        }    
     }
 }

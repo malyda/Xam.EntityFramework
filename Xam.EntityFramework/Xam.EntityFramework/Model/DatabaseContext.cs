@@ -15,10 +15,12 @@ namespace Xam.EntityFramework.Model
         public DatabaseContext(string databasePath)
         {
             _databasePath = databasePath;
-            Methods = new DatabaseMethods(this);
-
             // Ensure database is created
             base.Database.EnsureCreated();
+
+            Methods = new DatabaseMethods(this);
+
+   
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
