@@ -14,7 +14,7 @@ namespace Xam.EntityFramework
 		{
 			InitializeComponent();
 
-			MainPage = new View.Page.MainPage();
+		    MainPage = new View.Page.MainPage();
 		}
 
 		protected override void OnStart ()
@@ -31,10 +31,5 @@ namespace Xam.EntityFramework
 		{
 			// Handle when your app resumes
 		}
-
-        public static string DB()
-        {
-          return  DependencyService.Get<IDatabasePathHelper>().GetDatabasePath("entityFrameworkDatabase.db");
-        }
 	}
 }

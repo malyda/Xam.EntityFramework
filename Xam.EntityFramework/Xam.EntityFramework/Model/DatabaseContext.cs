@@ -12,9 +12,9 @@ namespace Xam.EntityFramework.Model
         private readonly string _databasePath;
 
         public readonly DatabaseMethods Methods;
-        public DatabaseContext(string databasePath)
+        public DatabaseContext()
         {
-            _databasePath = databasePath;
+            _databasePath = DatabasePathProvider.DatabasePath();
             // Ensure database is created
             base.Database.EnsureCreated();
 

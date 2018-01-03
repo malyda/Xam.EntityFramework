@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Xam.EntityFramework.Model.Entity;
+using Xamarin.Forms;
 
 namespace Xam.EntityFramework.Model.DatabaseHelpers
 {
