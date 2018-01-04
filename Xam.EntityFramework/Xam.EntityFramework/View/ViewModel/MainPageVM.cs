@@ -64,16 +64,14 @@ namespace Xam.EntityFramework.View.ViewModel
             IsLoading = true;
             await Task.Run(() =>
             {
-                using (DatabaseContext dbContext = new DatabaseContext())
+                DatabaseContext dbContext = new DatabaseContext();
+                // Get all Blogs from database
+                foreach (var blog in dbContext.Methods.GetAllBlogsFromDatabase())
                 {
-                    // Get all Blogs from database
-                    foreach (var blog in dbContext.Methods.GetAllBlogsFromDatabase())
-                    {
-                        Blogs.Add(blog);
-                    }
-
-                    IsLoading = false;
+                    Blogs.Add(blog);
                 }
+                
+                IsLoading = false;
             });
         }
     }

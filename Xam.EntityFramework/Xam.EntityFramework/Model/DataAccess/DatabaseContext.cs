@@ -2,8 +2,7 @@
 using Xam.EntityFramework.Model.DatabaseHelpers;
 using Xam.EntityFramework.Model.Entity;
 
-
-namespace Xam.EntityFramework.Model
+namespace Xam.EntityFramework.Model.DataAccess
 {
     public class DatabaseContext : DbContext
     {
@@ -15,12 +14,11 @@ namespace Xam.EntityFramework.Model
         public DatabaseContext()
         {
             _databasePath = DatabasePathProvider.DatabasePath();
+            
             // Ensure database is created
             base.Database.EnsureCreated();
 
             Methods = new DatabaseMethods(this);
-
-   
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

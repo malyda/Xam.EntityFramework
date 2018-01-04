@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Xam.EntityFramework.Model.Entity;
-using Xamarin.Forms;
 
-namespace Xam.EntityFramework.Model.DatabaseHelpers
+namespace Xam.EntityFramework.Model.DataAccess
 {
     public class DatabaseMethods
     {
@@ -34,25 +29,24 @@ namespace Xam.EntityFramework.Model.DatabaseHelpers
 
         public Blog InsertNewBlogAndArticleIntoDatabase()
         {
-                _dbContext.Add(new Article() {Content = "Standalone article"});
+            _dbContext.Add(new Article() {Content = "Standalone article"});
 
-                Blog blog = new Blog()
+            Blog blog = new Blog()
+            {
+                Rating = 5,
+                Url = "https://UrlOfBlog.com",
+                Articles = new List<Article>()
                 {
-                    Rating = 5,
-                    Url = "https://UrlOfBlog.com",
-                    Articles = new List<Article>()
-                    {
-                        new Article() {Content = "First Article"},
-                        new Article() {Content = "Second Article"}
-                    }
-                };
-         
+                    new Article() {Content = "First Article"},
+                    new Article() {Content = "Second Article"}
+                }
+            };
+
 
             // Insert Data
             _dbContext.Add(blog);
             _dbContext.SaveChanges();
             return blog;
-
         }
 
         public List<Blog> GetAllBlogsFromDatabase()
