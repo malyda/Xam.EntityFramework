@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Microsoft.EntityFrameworkCore;
 using Xam.EntityFramework.Model;
+using Xam.EntityFramework.Model.DataAccess;
 using Xam.EntityFramework.Model.DatabaseHelpers;
 using Xam.EntityFramework.Model.Entity;
 using Xamarin.Forms;
@@ -64,13 +65,14 @@ namespace Xam.EntityFramework.View.ViewModel
             IsLoading = true;
             await Task.Run(() =>
             {
-                DatabaseContext dbContext = new DatabaseContext();
-                // Get all Blogs from database
-                foreach (var blog in dbContext.Methods.GetAllBlogsFromDatabase())
-                {
-                    Blogs.Add(blog);
+                using (DatabaseContext dbContext = new DatabaseContext())
+                { 
+                    // Get all Blogs from database
+                    foreach (var blog in dbContext.Methods.GetAllBlogsFromDatabase())
+                    {
+                        Blogs.Add(blog);
+                    }
                 }
-                
                 IsLoading = false;
             });
         }
