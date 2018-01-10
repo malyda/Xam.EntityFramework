@@ -7,7 +7,14 @@ using Xam.EntityFramework.Model.DatabaseHelpers;
 using Xam.EntityFramework.Model.Entity;
 using Xam.EntityFramework.View.ViewModel;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
+
+/*
+ *     <ContentPage.BindingContext>
+        <local:View.ViewModel.MainPageVm/>
+    </ContentPage.BindingContext>
+ */
 namespace Xam.EntityFramework.View.Page
 {
     public partial class MainPage : ContentPage
@@ -15,6 +22,12 @@ namespace Xam.EntityFramework.View.Page
         public MainPage()
         {
             InitializeComponent();      
-        }    
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            this.BindingContext = new MainPageVm();
+        }
     }
 }

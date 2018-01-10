@@ -2,7 +2,7 @@
 using Xam.EntityFramework.Model.DatabaseHelpers;
 using Xam.EntityFramework.Model.Entity;
 
-namespace Xam.EntityFramework.Model.DataAccess
+namespace Xam.EntityFramework.Model.Service
 {
     public class DatabaseContext : DbContext
     {
@@ -10,15 +10,15 @@ namespace Xam.EntityFramework.Model.DataAccess
         public DbSet<Article> Articles { get; set; }
         private readonly string _databasePath;
 
-        public readonly DatabaseMethods Methods;
-        public DatabaseContext()
+        public readonly EfService Methods;
+        public DatabaseContext() : base()
         {
             _databasePath = DatabasePathProvider.DatabasePath();
             
             // Ensure database is created
             base.Database.EnsureCreated();
 
-            Methods = new DatabaseMethods(this);
+            Methods = new EfService(this);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

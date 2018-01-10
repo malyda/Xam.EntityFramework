@@ -2,14 +2,15 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Xam.EntityFramework.Model.Entity;
+using Xam.EntityFramework.Model.Service;
 
-namespace Xam.EntityFramework.Model.DataAccess
+namespace Xam.EntityFramework.Model.Service
 {
-    public class DatabaseMethods
+    public class EfService
     {
         private readonly DatabaseContext _dbContext;
 
-        public DatabaseMethods(DatabaseContext dbContext)
+        public EfService(DatabaseContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -51,7 +52,9 @@ namespace Xam.EntityFramework.Model.DataAccess
 
         public List<Blog> GetAllBlogsFromDatabase()
         {
-            return _dbContext.Blogs.ToList();
+            return _dbContext.Blogs
+                .Include(b => b.Articles)
+                .ToList();
         }
 
         /// <summary>

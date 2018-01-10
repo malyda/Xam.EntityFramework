@@ -10,7 +10,7 @@ namespace Xam.EntityFramework.Model.Entity
         public string Url { get; set; }
         public int Rating { get; set; }
 
-        public List<Article> Articles {get;set;}
+        public virtual List<Article> Articles {get;set;}
 
         public override string ToString()
         {
